@@ -1,0 +1,23 @@
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0;
+  width : 100%;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#title{
+  padding: 50px;
+}
+
+#plot {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

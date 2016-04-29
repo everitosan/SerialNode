@@ -1,0 +1,20 @@
+body, html {
+  background: #18493E;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+  padding: 0;
+}
+
+h1 {
+  padding: 0.5em 1em;
+  z-index: 2;
+  position: relative;
+  float: right;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
