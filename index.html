@@ -6,12 +6,27 @@
   <link rel="stylesheet" href="stylsheets/style.css">
 </head>
 <body>
-  <h1>Sensor:
-    <span id="value">
-    </span>
-  </h1>
-  <canvas id="canvas" ></canvas>
+
+  <header>
+    <div id="container">
+      <div class="row">
+        <img src="img/EscudoIPN.png" alt="">
+        <div>
+          <h1>Sensor de Temperatura</h1>
+          <h2>Sensor de Temperatura</h2>
+        </div>
+        <img src="img/esime.png" alt="">
+      </div>
+    </div>
+  </header>
+
+  <div id="graph">
+    <div id="reporter">grados</div>
+    <canvas id="canvas" ></canvas>
+  </div>
+
 </body>
 <script src="/socket.io/socket.io.js" ></script>
+<script src="Graph.js" ></script>
 <script src="scripts.js" ></script>
 </html>

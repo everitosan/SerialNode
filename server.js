@@ -21,11 +21,12 @@ server.listen(3000);
 
 io.on('connection', function (socket) {
 
-  socket.setMaxListeners(3);
+  socket.setMaxListeners(Infinity);
   sensor.printDevices();
   sensor.init("/dev/cu.usbserial", "9600");
   sensor.readData(function(data) {
     //emmit event for js at index.html
+    data = data.substring(1);
     socket.emit('dataUpdate', { value: data });
     socket.on('Client says', function (data) {
       console.log(data);
