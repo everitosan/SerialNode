@@ -48,29 +48,20 @@ Graph.prototype.drawScale = function () {
       this.ctx.beginPath();
       this.ctx.moveTo(this.x, i*nLinesSpace + this.topSpace );
       this.ctx.lineTo(this.x+20,  i*nLinesSpace + this.topSpace  );
-      this.ctx.strokeStyle = "#E5E5E5";
+      this.ctx.strokeStyle = "#FFFFFF";
       this.ctx.stroke();
     this.ctx.restore();
   }
 
   //yAxis Lines
 
-  if(this.x % this.cleanWidth == 0) {
 
-    this.ctx.save();
-      this.ctx.beginPath();
-      this.ctx.moveTo(this.x, this.topSpace );
-      this.ctx.lineTo(this.x, this.topSpace + this.oneGraphHeight );
-      this.ctx.strokeStyle = "#E5E5E5";
-      this.ctx.stroke();
-    this.ctx.restore();
-  } 
 
 };
 
 Graph.prototype.clean = function() {
   this.ctx.save();
-    this.ctx.fillStyle = "#FFFFFF";
+    this.ctx.fillStyle = "#19436E";
     this.ctx.fillRect(this.x, this.topSpace, 20, this.oneGraphHeight);
   this.ctx.restore();
 };
@@ -99,4 +90,10 @@ Graph.prototype.toCelcius = function(raw) {
 
 Graph.prototype.reMap = function(val, end1, end2) {
   return  (val*end2) / end1 ;
+};
+
+Graph.prototype.moveEl = function(element) {
+  console.log(this.x);
+  element.style.left = this.x + 10 +"px";
+  element.style.top = this.oneGraphHeight +this.topSpace - this.y1 - 30 + "px";
 };

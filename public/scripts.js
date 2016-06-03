@@ -13,4 +13,5 @@ mGraph.setNGraphs(2);
 socket.on('dataUpdate', function (data) {
   reporter.innerHTML = Math.round(data.value / 2.049) + "º";
   mGraph.draw(data.value);
+  mGraph.moveEl(reporter);
 });

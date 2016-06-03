@@ -18,15 +18,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //port for the server
 server.listen(3000);
+sensor.printDevices();
 
 io.on('connection', function (socket) {
 
   socket.setMaxListeners(Infinity);
-  sensor.printDevices();
-  sensor.init("/dev/cu.usbserial", "9600");
+  sensor.init("/dev/cu.usbmodem1421", "9600");
   sensor.readData(function(data) {
     //emmit event for js at index.html
-    data = data.substring(1);
+    data = data.substring(0);
     socket.emit('dataUpdate', { value: data });
     socket.on('Client says', function (data) {
       console.log(data);
