@@ -79,7 +79,8 @@ Graph.prototype.lineTo = function (normalized) {
     this.ctx.beginPath();
     this.ctx.moveTo(this.x, (this.oneGraphHeight +this.topSpace - this.y1) );
     this.ctx.lineTo(this.x+1, (this.oneGraphHeight +this.topSpace - normalized) );
-    this.ctx.strokeStyle = "#FF9800";
+    this.ctx.lineWidth=2;
+    this.ctx.strokeStyle = "#F82727";
     this.ctx.stroke();
   this.ctx.restore();
 };
